@@ -1,0 +1,27 @@
+<%- include('../shared/includes/head', { pageTitle: 'Admin Page' }) %>
+<script type='module' src="/scripts/api/delete-product.js" defer></script>
+<script type='module' src="/scripts/search.js" defer></script>
+</head>
+
+<body>
+  <%- include('../shared/includes/header') %>
+
+  <main>
+
+    <%- include("../shared/includes/search") %>
+
+    <section class="product-container">
+      <div>
+        <h1 class="title"> Manage Products </h1>
+        <a class="btn" id="create-product" href="/admin/create-product"> Create New Product</a>
+        <ul>
+          <% for(const product of products) { %>
+          <%- include('../shared/includes/product-item', { viewProductPath: "/admin/product", product} ) %>
+          <% } %>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+
+  <%- include('../shared/includes/footer') %>

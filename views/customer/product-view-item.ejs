@@ -1,0 +1,14 @@
+<%- include('../shared/includes/head', { pageTitle: product.shortenTitle}) %>
+<link rel="stylesheet" href="/styles/product-view-item.css">
+<script type="module" src="/scripts/api/add-to-cart.js" defer></script>
+</head>
+
+<body>
+  <%- include('../shared/includes/header') %>
+
+  <main>
+    <%- include('../shared/includes/product-view-item', {product}) %>
+  </main>
+
+
+  <%- include('../shared/includes/footer') %>

@@ -1,0 +1,21 @@
+<%- include('../shared/includes/head', { pageTitle: 'All Orders' }) %>
+<link rel="stylesheet" href="/styles/order.css">
+<script type='module' src="/scripts/api/update-status.js" defer></script>
+
+</head>
+
+<body>
+  <%- include('../shared/includes/header') %>
+  <main>
+    <section>
+      <div class="order-container">
+        <h1>All Order</h1>
+        <% for(const order of orders) { %>
+        <%- include('../shared/includes/order', {order}) %>
+        <% } %>
+      </div>
+    </section>
+  </main>
+
+
+  <%- include('../shared/includes/footer') %>

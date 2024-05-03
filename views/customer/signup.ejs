@@ -1,0 +1,86 @@
+<%- include('../shared/includes/head', { pageTitle: 'Choxxi Login' }) %>
+<link rel="stylesheet" href="/styles/login.css">
+<script src="/scripts/input-style.js" defer></script>
+<script src="/scripts/input-error.js" defer></script>
+<script src="/scripts/modal.js" defer></script>
+</head>
+
+<body>
+  <%- include('../shared/includes/header') %>
+  <main>
+    <%- include('../shared/includes/modal') %>
+    <section>
+      <div>
+        <form action="/signup" method="POST" class="login-container">
+          <input type="hidden" name="_csrf" value="<%=locals.csrfToken %>">
+          <%-include('./includes/login-header', { className: 'signup'}) %>
+
+          <div class="meta-container">
+
+            <div class="input-container" data-error="<%=inputData.errorMessage.fullname%>">
+              <i class="bi bi-file-person-fill"></i>
+              <label for="fullname">Full Name</label>
+              <input type="text" name="fullname" id="fullname" value="<%= inputData.fullname%>">
+            </div>
+
+
+            <div class="input-container" data-error="<%=inputData.errorMessage.email%>">
+              <i class="bi bi-envelope-fill"></i>
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" value="<%= inputData.email%>" autocomplete="off">
+            </div>
+
+            <div class="input-container" data-error="<%=inputData.errorMessage.street%>">
+              <i class="bi bi-house-door-fill"></i>
+              <label for="street">Street</label>
+              <input type="text" name="street" id="street" value="<%= inputData.street %>">
+            </div>
+
+            <div class="input-container" data-error="<%=inputData.errorMessage.city%>">
+              <i class="bi bi-geo-alt-fill"></i>
+              <label for="city">City</label>
+              <input type="text" name="city" id="city" value="<%= inputData.city%>">
+            </div>
+
+
+            <div class="input-container" data-error="<%=inputData.errorMessage['postal-code']%>">
+              <i class="bi bi-geo-fill"></i>
+              <label for="postal-code">Postal Code</label>
+              <input type="text" name="postal-code" id="postal-code" value="<%= inputData['postal-code'] %>" autocomplete="postal-code" required>
+            </div>
+
+            <div class="input-container" data-error="<%=inputData.errorMessage.password%>">
+              <i class="bi bi-keyboard-fill"></i>
+              <label for="password">Password</label>
+              <input type="password" name="password" id="password" required>
+            </div>
+
+
+            <div class="input-container" data-error="<%=inputData.errorMessage['new-password']%>">
+              <i class="bi bi-unlock-fill"></i>
+              <label for="new-password">Confirm-Password</label>
+              <input type="password" name="new-password" id="new-password" required>
+            </div>
+
+          </div>
+
+          <p id="forgot-password" class="blue"><a href="">Forgot Password?</a></p>
+
+          <div class="login-actions">
+            <button class="login-btn alt">
+              <i class="bi bi-person-plus-fill"></i>
+              Sign up
+            </button>
+
+            <div class="login-btn alt alts">
+              <p> Have an account ? <span><a href="/signin" class="blue"> Sign up</a></span> </p>
+            </div>
+
+          </div>
+        </form>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include('../shared/includes/footer') %>

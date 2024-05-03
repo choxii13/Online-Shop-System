@@ -1,0 +1,67 @@
+<form action='<%= actionPath %>?_csrf=<%=locals.csrfToken%>' method="POST" class="create-product" enctype="multipart/form-data">
+
+  <div class="product">
+
+    <div id="product-image">
+      <h4> Product Image</h4>
+      <img src="<%=product.imageUrl%>">
+      <input type="file" name="image" id="image" <% if(imageRequired) {%> required <%}%>>
+    </div>
+
+    <div class="description">
+
+      <div class="header">
+        <h4>Shorten Title</h4>
+        <input type="text" name="product-short-title" id="product-short-title" value="<%=product.shortenTitle%>" maxlength="20" required>
+    </div>
+
+    <div class=" header">
+      <h4>Title</h4>
+      <input type="text" name="product-title" id="product-title" maxlength="50" value="<%=product.title%>" required>
+    </div>
+
+    <div class="header">
+      <h4>Price</h4>
+      <input type="text" name="product-price" id="product-price" maxlength="15" value="<%=product.price%>" required>
+
+    </div>
+
+    <div class="item-description">
+      <h4>Selling Description</h4>
+      <div class="input-description">
+
+        <input type="text" name="selling-description-one" id="selling-description-one" maxlength="50" value="<%=product.sellingDescription.one%>" required>
+
+
+        <input type="text" name="selling-description-two" id="selling-description-two" value="<%=product.sellingDescription.two%>" maxlength="50" required>
+
+
+        <input type="text" name="selling-description-three" id="selling-description-three" value="<%=product.sellingDescription.three%>" maxlength="50" required>
+
+
+        <input type="text" name="selling-description-four" id="selling-description-four" value="<%=product.sellingDescription.four%>" maxlength="50" required>
+
+      </div>
+    </div>
+
+    <div class="item-description">
+      <h4>Product Description</h4>
+      <div class="input-description">
+
+        <input type="text" name="product-description-one" id="product-description-one" maxlength="50" value="<%=product.productDescription.one%>" required>
+
+        <input type="text" name="product-description-two" id="product-description-two" value="<%=product.productDescription.two%>" maxlength="50" required>
+
+        <input type="text" name="product-description-three" id="product-description-three" value="<%=product.productDescription.three%>" maxlength="50" required>
+
+
+        <input type="text" name="product-description-four" id="product-description-four" maxlength="50" value="<%=product.productDescription.four%>" required>
+      </div>
+    </div>
+
+  </div>
+
+  </div>
+
+  <button class="btn"> <%= name %> </button>
+</form>

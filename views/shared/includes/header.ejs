@@ -1,0 +1,26 @@
+<header>
+  <div>
+    <nav>
+      <%-include('logo')%>
+      <div class="nav-container">
+        <%-include('nav-items') %>
+        <%-include('nav-actions') %>
+      </div>
+      <button id="mobile-menu-button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+
+<aside id="myNav" class="overlay">
+
+  <a class="closebtn" id="close-curtain-menu">&times;</a>
+  <div class="overlay-content">
+    <%-include('nav-items') %>
+    <%-include('nav-actions')%>
+  </div>
+</aside>

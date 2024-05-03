@@ -1,0 +1,64 @@
+<section>
+  <div class="product-item">
+    <div class="product-item-container">
+      <div class="container">
+        <img src="<%=product.imageUrl%>" alt="<%=product.title%>">
+      </div>
+      <article class="container">
+        <div class="header">
+          <h1 class="product-name"> <%=product.title%> </h1>
+          <h3 class="product-price"> ₱ <%=product.price%> </h3>
+        </div>
+
+
+        <ul class="selling-description">
+          <h5> Selling Description</h5>
+          <li>
+            <p><%=product.sellingDescription.one%> </p>
+          </li>
+          <li>
+            <p><%=product.sellingDescription.two%> </p>
+          </li>
+          <li>
+            <p><%=product.sellingDescription.three%></p>
+          </li>
+          <li>
+            <p><%=product.sellingDescription.four%></p>
+          </li>
+        </ul>
+
+        <ul class="item-description">
+          <h5> Product Description</h5>
+          <li>
+            <p><%=product.productDescription.one%></p>
+          </li>
+          <li>
+            <p><%=product.productDescription.two%></p>
+          </li>
+          <li>
+            <p><%=product.productDescription.three%></p>
+          </li>
+          <li>
+            <p><%=product.productDescription.four%></p>
+          </li>
+        </ul>
+
+      </article>
+
+    </div>
+    <div class="product-item-actions">
+      <%if(locals.isAdmin) {  %>
+      <a class="btn" href="/admin/update-product/<%=product.id%>">Update Cart</a>
+      <button class="btn" id="delete-view-item" data-csrf="<%=locals.csrfToken%>" data-productId="<%=product.id%>">Delete Cart</button>
+      <%} %>
+
+      <%if(locals.isAuth && !locals.isAdmin ) {  %>
+      <button class="btn" id="js-add-to-cart" data-csrf="<%=locals.csrfToken%>" data-productid="<%=product.id%>"> Add to Cart</button>
+      <% } %>
+
+      <%if(!locals.isAuth) {  %>
+      <a class="btn" href="/signin"> Add to Cart </a>
+      <% } %>
+    </div>
+  </div>
+</section>

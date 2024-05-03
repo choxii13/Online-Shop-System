@@ -1,0 +1,25 @@
+<li class="products js-product-item">
+
+  <article>
+    <div class="image-container">
+      <img src="<%=product.imageUrl%>" alt="<%=product.shortenTitle%>">
+      <a class="btn add-cart view-item" href="<%= viewProductPath %>/<%=product.id%>"> View Item</a>
+    </div>
+
+    <h6 class="name"> <%=product.shortenTitle%></h6>
+    <p> ₱ <%=product.price%> </p>
+
+    <%if(locals.isAuth && !locals.isAdmin) { %>
+    <button class="btn add-cart js-add-to-cart" data-csrf="<%=locals.csrfToken%>" data-productid="<%=product.id%>">Add to Cart</button>
+    <%} %>
+
+    <%if(!locals.isAuth) { %>
+    <a class="btn add-cart" href="/signin">Add to Cart</a>
+    <%} %>
+
+    <%if(locals.isAdmin) { %>
+    <a class="btn add-cart" href="/admin/update-product/<%=product.id%>">Update</a>
+    <button class="btn add-cart js-delete-item" data-csrf="<%=locals.csrfToken%>" data-productId="<%=product.id%>">Delete</button>
+    <% } %>
+  </article>
+</li>

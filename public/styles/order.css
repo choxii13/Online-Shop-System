@@ -1,0 +1,99 @@
+.order-container {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
+  padding: 2rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 70rem;
+}
+
+.order {
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--text-color);
+}
+
+.order-container h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--third-color-600);
+}
+
+.order .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order .status {
+  border-radius: 2rem;
+  color: white;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+.order address {
+  font-size: 0.8rem;
+  color: var(--header-text-color);
+}
+
+.order .products {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+}
+
+.order-actions form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.order-actions select {
+  height: 2rem;
+  font-size: 1rem;
+  font: inherit;
+  font-weight: 800;
+  padding: 0 0.5rem;
+  border-radius: 2rem;
+  color: var(--third-color-700);
+}
+.order-actions select:hover,
+.order-actions select:active {
+  background-color: var(--third-color-700);
+  cursor: pointer;
+  color: white;
+  transition: background-color 1s, color 1s;
+}
+
+.order .header p {
+  font-weight: 700;
+}
+
+/* font responsive */
+
+.order .total-price {
+  color: var(--header-text-color);
+  font-size: clamp(0.8rem, 1.7vw, 2rem);
+}
+
+.order .price {
+  font-size: clamp(0.8rem, 1.8vw, 2rem);
+  color: green;
+}
+
+.order .status {
+  font-size: clamp(0.8rem, 1.5vw, 2rem);
+  padding: clamp(0.2rem, 0.5vw, 1rem) clamp(0.5rem, 2.5vw, 2rem);
+}
+.order .name,
+.order .date,
+.order address {
+  font-size: clamp(0.7rem, 1.3vw, 2rem);
+  font-style: normal;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.order .products li p {
+  font-size: clamp(0.5rem, 1vw, 2rem);
+}

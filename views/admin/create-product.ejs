@@ -1,0 +1,24 @@
+<%- include('../shared/includes/head', { pageTitle: 'Choxxi' }) %>
+<link rel="stylesheet" href="/styles/create-product.css">
+<script src="/scripts/image-preview.js" defer></script>
+</head>
+
+<body>
+  <%- include('../shared/includes/header') %>
+
+  <main>
+    <section class="create-product-container">
+      <div>
+        <%-include('shared/product-form', { actionPath: "/admin/create-product",  imageRequired:true, name: " Create New Product ",  
+        product:{ shortenTitle:" ", 
+        title:" ", 
+        price:" ", 
+        sellingDescription: {one:" ", two: " ", three:" ", four:" "},
+        productDescription: {one:" ", two:" ", three:" ", four:" "}
+         }})%>
+      </div>
+    </section>
+  </main>
+
+
+  <%- include('../shared/includes/footer') %>

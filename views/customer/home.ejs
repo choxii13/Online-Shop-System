@@ -1,0 +1,50 @@
+<%- include('../shared/includes/head', { pageTitle: 'Choxxi' }) %>
+<link rel="stylesheet" href="/styles/carousel.css" media="all">
+<script type="module" src="/scripts/api/add-to-cart.js" defer></script>
+<script src="/scripts/carousel.js" defer></script>
+<script src="/scripts/search.js" defer></script>
+</head>
+
+<body>
+  <%- include('../shared/includes/header') %>
+
+  <main>
+    <section>
+      <div class="carousel-container">
+        <div class="carousel">
+          <img src="/images/image-carousel-1.jpg" alt="laptop">
+          <img src="/images/image-carousel-2.jpg" alt="laptop">
+          <img src="/images/image-carousel-3.jpg" alt="laptop">
+          <img src="/images/image-carousel-4.jpg" alt="laptop">
+          <img src="/images/image-carousel-5.jpg" alt="laptop">
+          <div class="dot">
+            <i class="bi bi-record-fill"></i>
+            <i class="bi bi-record-fill"></i>
+            <i class="bi bi-record-fill"></i>
+            <i class="bi bi-record-fill"></i>
+            <i class="bi bi-record-fill"></i>
+          </div>
+          <button id="next"><i class="bi bi-chevron-right"></i></button>
+          <button id="before"><i class="bi bi-chevron-left"></i></button>
+        </div>
+
+      </div>
+    </section>
+    
+    <%- include("../shared/includes/search") %>
+
+    <section class="product-container">
+      <div>
+        <h1 class="title"> All Products </h1>
+        <ul>
+          <% for(const product of products) { %>
+          <%- include('../shared/includes/product-item', { viewProductPath: "/home/product", product} ) %>
+          <% } %>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+
+  <%- include('../shared/includes/footer') %>
